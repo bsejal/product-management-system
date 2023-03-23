@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+
+<style>
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+</style>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+
+<title>update</title>
+</head>
+<body>
+	
+	<h3 class="center">Update</h3>
+
+	<form style="margin:0px 40px 0px 40px" method="post" th:action="@{/updateUsers/{id} (id=${user.id})}" role="form"
+		th:object="${user}">
+
+		<label class="form-label">ID: </label> <input disabled class="form-control"
+			type="text" required th:field="*{id}" /><br> 
+		<label class="form-label">Name: </label> <input class="form-control"
+			type="text" required th:field="*{name}" /><br> <label
+			class="form-label">Email: </label> <input class="form-control"
+			type="email" required th:field="*{email}" /><br>  <label
+			class="form-label">Mobile: </label> <input type="text"
+			class="form-control" required th:field="*{mobile}" /><br>
+			 <label
+			class="form-label">Passcode: </label> <input type="text"
+			class="form-control" required th:field="*{passcode}" /><br>
+
+
+		<button class="btn btn-primary" type="submit">Update</button>
+
+	</form>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+</html>

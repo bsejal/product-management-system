@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>User Details</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:include="@{/navbar.html}"></div>
+	<div class="container">
+		<h2 class="text-center mb-4">User Details</h2>
+		<table class="table table-sm">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Mobile</th>
+					<th>Passcode</th>
+					<th>Role</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${users}">
+					<td th:text="${user.id}">ABC</td>
+					<td th:text="${user.name}">ABC</td>
+					<td th:text="${user.email}">ABC</td>
+					<td th:text="${user.mobile}">ABC</td>
+					<td th:text="${user.passcode}">ABC</td>
+					<td th:text="${user.role}">ABC</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>
